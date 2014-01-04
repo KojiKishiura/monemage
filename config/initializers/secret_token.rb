@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Monemage::Application.config.secret_key_base = '58a2b287560cfacb0656d3c532299d3a3448ba3aea407d1ce0d7b978f150e4af7690a9e675b7b21e478bce6f253ebe58c16e14e5ccbc2fda948ef78264b98b77'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+  	# Use the existing token.
+  	File.read(token_file).chomp
+  else
+  	# Generate a new token and store it in token_file.
+  	token = SecureRandom.hex(64)
+  	File.write(token_file, token)
+  	token
+  end
+end
+
+Monemage::Application.config.secret_key_base = secure_token
