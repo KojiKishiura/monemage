@@ -33,4 +33,7 @@ Monemage::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # bcrypt'残すと関数を下げることでテストの速度を向上させる
+  ActiveModel::SecurePassword.min_cost = true
 end
