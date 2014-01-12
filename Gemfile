@@ -29,9 +29,9 @@ end
 group :assets do
   gem 'sprockets-rails', :git => 'https://github.com/rails/sprockets-rails.git'
   # Use SCSS for stylesheets
-  gem 'sass-rails',   '~> 4.0.0', :git => 'https://github.com/rails/sass-rails.git'
+  gem 'sass-rails',   '4.0.0', :git => 'https://github.com/rails/sass-rails.git'
   # Use CoffeeScript for .js.coffee assets and views
-  gem 'coffee-rails', '~> 4.0.0', :git => 'https://github.com/rails/coffee-rails.git'
+  gem 'coffee-rails', '4.0.0', :git => 'https://github.com/rails/coffee-rails.git'
 end
 
 # Use Uglifier as compressor for JavaScript assets
